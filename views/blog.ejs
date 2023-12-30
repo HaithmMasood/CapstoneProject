@@ -1,0 +1,178 @@
+<%- include("partials/header.ejs") %>
+<div class="entire">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Haithm</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/post">Post</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.instagram.com/27.5.20?igsh=MW00eHh6b2s3azh6bw=="
+              ><img src="images/instagram.svg" alt="instagram icon"
+            /></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/HaithmMasood"
+              ><img src="images/twitter-x.svg" alt="twitter-x icon"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content blog">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="images/eggPicture.jpg"
+            class="card-img-top"
+            alt="egg picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Breakfast</h5>
+            <p class="card-text">
+              Explore our Breakfast Page for quick, delicious, and healthy
+              morning meal ideas. Perfect for every day and special brunches!
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="footer-text">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+            <div class="footer-icons">
+              <a href="#">
+                <img src="images/EditIcon.svg" alt="Edit Icon" />
+              </a>
+              <a href="/delete">
+                <img src="images/removeIcon.svg" alt="Remove Icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="images/hobbiesPicture.jpg"
+            class="card-img-top"
+            alt="puzzle picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Hobby</h5>
+            <p class="card-text">
+              Activities pursued for pleasure and relaxation during free time.
+              They vary widely, from creative arts to sports, and offer
+              enjoyment, stress relief, and a chance for personal growth and
+              social interaction.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="footer-text">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+            <div class="footer-icons">
+              <a href="#">
+                <img src="images/EditIcon.svg" alt="Edit Icon" />
+              </a>
+              <a href="/delete">
+                <img src="images/removeIcon.svg" alt="Remove Icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="images/proffesionPicture.jpg"
+            class="card-img-top"
+            alt="profession picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Profession</h5>
+            <p class="card-text">
+              Occupations requiring specialized training or education, pursued
+              as a long-term career. Professions provide income, shape identity,
+              offer pathways for advancement, and contribute significantly to
+              society.
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="footer-text">
+              <small class="text-body-secondary">Last updated 3 mins ago</small>
+            </div>
+            <div class="footer-icons">
+              <a href="#">
+                <img src="images/EditIcon.svg" alt="Edit Icon" />
+              </a>
+              <a href="/delete">
+                <img src="images/removeIcon.svg" alt="Remove Icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% posts.forEach(post => { %>
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="<%= post.imagePath %>"
+            class="card-img-top"
+            alt="<%= post.title %> picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text"><%= post.content %></p>
+          </div>
+          <div class="card-footer">
+            <div class="footer-text">
+              <small class="text-body-secondary"
+                >Last updated <%= post.lastUpdated.toDateString() %> ago</small
+              >
+            </div>
+            <div class="footer-icons">
+              <!-- Add appropriate links for editing and removing -->
+              <a href="/edit-post/<%= post.id %>">
+                <img src="images/EditIcon.svg" alt="Edit Icon" />
+              </a>
+              <a href="/delete-post/<%= post.id %>">
+                <img src="images/removeIcon.svg" alt="Remove Icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

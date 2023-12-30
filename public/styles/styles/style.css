@@ -1,0 +1,139 @@
+body{
+    background-color: #f8f8ff;
+}
+
+.entire{
+    min-height: calc(100vh - 56px - 104.8px);
+}
+
+.footer { 
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+}
+
+.about {
+    display: grid;
+    margin: 20px;
+    grid-template-rows: 50px auto;
+}
+
+
+/* styling the contact form */
+.container-fluidd {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.contact {
+    width: 100%;
+    max-width: 500px; 
+    margin: auto; 
+    padding: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .contact {
+        width: 90%; 
+    }
+}
+
+@media (min-width: 769px) {
+    .contact {
+        width: 50%; 
+    }
+}
+
+input[type="email"],
+.message {
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+}
+
+input[type="email"]:focus,
+.message:focus {
+    outline: none;
+    border-color: #999; 
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 10px; 
+    border: none; 
+    border-radius: 4px;
+    background-color: #007bff; 
+    color: white;
+    cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* end of styling the contact form */
+
+
+.blog{
+    margin: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.card-footer a {
+    margin-left: 20px;
+}  
+
+
+
+/* styling the post form */
+.post-form {
+    width: 100%;
+    max-width: 500px; 
+    margin: auto; 
+    padding: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 30px;
+}
+
+
+input[type="text"],
+.form-textarea,
+.form-file {
+    width: 100%; 
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+}
+
+input[type="text"]:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #999; 
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 10px; 
+    border: none; 
+    border-radius: 4px;
+    background-color: #007bff; 
+    color: white;
+    cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/* end of styling the post form */
